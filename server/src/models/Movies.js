@@ -10,6 +10,7 @@ module.exports = (sequelize, Sequelize) => {
 		cast: { type: Sequelize.STRING },
 		distributor: { type: Sequelize.STRING },
 		website: { type: Sequelize.STRING },
+		image_url: { type: Sequelize.STRING },
 	});
 
 	return Movies;

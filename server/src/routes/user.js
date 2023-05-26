@@ -6,7 +6,7 @@ const userController = require("../controllers").userController;
 router.get("/", userController.getAll);
 router.get("/:id", userController.getById);
 
-// insert
+// insert // register
 router.post("/", userController.insertUserV1);
 
 // update

@@ -48,6 +48,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 const user = require("./Users");
+db.Token = require("./token")(sequelize, Sequelize);
 db.Users = user(sequelize, Sequelize);
 db.City = require("./Cities")(sequelize, Sequelize);
 db.Theater = require("./Theaters")(sequelize, Sequelize);

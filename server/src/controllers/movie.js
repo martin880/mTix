@@ -23,6 +23,7 @@ const movieController = {
 	},
 	insertMovie: async (req, res) => {
 		try {
+			const { filename } = req.file;
 			const {
 				name,
 				synopsis,
@@ -46,6 +47,7 @@ const movieController = {
 				cast,
 				distributor,
 				website,
+				image_url: process.env.movie_url + filename,
 			});
 			return await db.Movie.findAll().then((result) => {
 				res.send(result);
@@ -69,6 +71,7 @@ const movieController = {
 				cast,
 				distributor,
 				website,
+				image_url,
 			} = req.body;
 			await db.Movie.update(
 				{
@@ -82,6 +85,7 @@ const movieController = {
 					cast,
 					distributor,
 					website,
+					image_url,
 				},
 				{
 					where: {

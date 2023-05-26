@@ -23,18 +23,6 @@ const userController = {
 		});
 		return res.send(user);
 	},
-	register: async (req, res) => {
-		try {
-			const user = await db.Users.findOne({
-				where: { email: req.query.email },
-			});
-			console.log(user);
-		} catch (error) {
-			res.status(500).send({
-				message: error.message,
-			});
-		}
-	},
 	login: async (req, res) => {
 		try {
 			const user = await db.Users.findOne({

@@ -11,6 +11,7 @@ app.use(cors());
 
 // db.sequelize.sync({ force: true }).then(() => console.log("Sync 'Complete"));
 // db.sequelize.sync({ alter: true }).then(() => console.log("Sync 'Complete"));
+app.use("/movies/image", express.static(`${__dirname}/public/movie`));
 
 app.use("/city", routes.cityRoutes);
 app.use("/user", routes.userRoutes);
